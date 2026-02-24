@@ -5,13 +5,13 @@
 class DatetimeMcp < Formula
   desc "Self-contained date/time provider for Claude Desktop, Claude Code, and Codex"
   homepage "https://github.com/tmsdnl/datetime-mcp"
-  version "1.2.1"
+  version "1.2.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.2.1/datetime-mcp_1.2.1_darwin_amd64.tar.gz"
-      sha256 "df520fea699144f163e03f1dcee2b52d85beb9d49c08e806f6530aeda6c1b44c"
+      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.2.2/datetime-mcp_1.2.2_darwin_amd64.tar.gz"
+      sha256 "a55b7ed19252a1e2a3b26bc6fdc0a3002e2c41945961f44927f56ffec27284f8"
 
       define_method(:install) do
         bin.install "datetime-mcp"
@@ -19,8 +19,8 @@ class DatetimeMcp < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.2.1/datetime-mcp_1.2.1_darwin_arm64.tar.gz"
-      sha256 "4de42c3d2f2e82f3361474139da89fcab6869edeb7ea8a3558318e21ae89eb3d"
+      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.2.2/datetime-mcp_1.2.2_darwin_arm64.tar.gz"
+      sha256 "befad6e9beff675cc2c41b3234f7898fc0895cc302f96781990d7d2c8eef8675"
 
       define_method(:install) do
         bin.install "datetime-mcp"
@@ -31,16 +31,16 @@ class DatetimeMcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.2.1/datetime-mcp_1.2.1_linux_amd64.tar.gz"
-      sha256 "242a8526b6dd26c2bb71d952fe2f2d8ad9ab1f8a4b11af2b30068157d9b582d2"
+      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.2.2/datetime-mcp_1.2.2_linux_amd64.tar.gz"
+      sha256 "be7624b77a4cd889c5c64065e7bf0bc0233b2127af4f00f76dd7d51982437476"
       define_method(:install) do
         bin.install "datetime-mcp"
         pkgshare.install Dir["formats/*.yaml"]
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.2.1/datetime-mcp_1.2.1_linux_arm64.tar.gz"
-      sha256 "58f22c6ac3e051818d9d933f629acf698f66a0fbb1977dbee5980856c058bd0f"
+      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.2.2/datetime-mcp_1.2.2_linux_arm64.tar.gz"
+      sha256 "e27d165f4016309c114f69b7b42968cc1667ac29dcfc09ac431bdc4355c130b3"
       define_method(:install) do
         bin.install "datetime-mcp"
         pkgshare.install Dir["formats/*.yaml"]
@@ -48,19 +48,12 @@ class DatetimeMcp < Formula
     end
   end
 
-  def post_install
-    formats_dir = "#{Dir.home}/.config/datetime-mcp/formats"
-    FileUtils.mkdir_p(formats_dir)
-    Dir.glob("#{pkgshare}/*.yaml").each { |f| FileUtils.cp(f, formats_dir) }
-  end
-
   def caveats
     <<~EOS
-      Format files are installed to:
+      Custom format files can be placed in:
         ~/.config/datetime-mcp/formats/
 
-      To fully remove datetime-mcp, also delete:
-        ~/.config/datetime-mcp/
+      To fully remove datetime-mcp, also delete that directory.
     EOS
   end
 
