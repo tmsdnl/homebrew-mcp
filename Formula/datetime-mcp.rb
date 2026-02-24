@@ -5,21 +5,21 @@
 class DatetimeMcp < Formula
   desc "Self-contained date/time provider for Claude Desktop, Claude Code, and Codex"
   homepage "https://github.com/tmsdnl/datetime-mcp"
-  version "1.3.2"
+  version "1.3.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.2/datetime-mcp_1.3.2_darwin_amd64.tar.gz"
-      sha256 "8f28ffefa0614f856390176c2691ab17c9578e3b401986e3e1e335b594a30771"
+      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.3/datetime-mcp_1.3.3_darwin_amd64.tar.gz"
+      sha256 "91b66fed88eb7d150ac858b0407e7f512b58b18f0e050477f9fd0dd37ea51c63"
 
       define_method(:install) do
         bin.install "datetime-mcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.2/datetime-mcp_1.3.2_darwin_arm64.tar.gz"
-      sha256 "0e28680040936b2dc23cbc99afbfcf6be47d3f1b942061c092a3d5ffd89ec2d3"
+      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.3/datetime-mcp_1.3.3_darwin_arm64.tar.gz"
+      sha256 "f08eca7207f7530a1a25c88163c29123d168d0f9269e619474eb90dcfd853979"
 
       define_method(:install) do
         bin.install "datetime-mcp"
@@ -29,15 +29,15 @@ class DatetimeMcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.2/datetime-mcp_1.3.2_linux_amd64.tar.gz"
-      sha256 "20b1b7342b21fc702ce719b3f307dfa1653af876191900c62eb38e0a0c6dc6af"
+      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.3/datetime-mcp_1.3.3_linux_amd64.tar.gz"
+      sha256 "4ba63c68b2edf584f95fe15d9b1398cee11693c40a91a15d26cca4fe406a505d"
       define_method(:install) do
         bin.install "datetime-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.2/datetime-mcp_1.3.2_linux_arm64.tar.gz"
-      sha256 "fdc7d2981fd948a0aa4fc6d38c1fac79067e85fdf01607c8586f5d8fc444789a"
+      url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.3/datetime-mcp_1.3.3_linux_arm64.tar.gz"
+      sha256 "7a608ac8b1fc86496770b200b6c9f39ccc27a24a726ae2427b74f0d344c9c617"
       define_method(:install) do
         bin.install "datetime-mcp"
       end
