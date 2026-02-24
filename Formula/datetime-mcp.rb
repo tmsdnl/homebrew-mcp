@@ -11,7 +11,7 @@ class DatetimeMcp < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.0/datetime-mcp_1.3.0_darwin_amd64.tar.gz"
-      sha256 "cc31aca0dff585e6de1ab7b6f7cf238dd31264a6bf2ad6cb0850f798ec31b281"
+      sha256 "f9369607c82fee3115e35f9621ca7eb57db27136f3c461d8257ed0bf12207fdb"
 
       define_method(:install) do
         bin.install "datetime-mcp"
@@ -19,7 +19,7 @@ class DatetimeMcp < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.0/datetime-mcp_1.3.0_darwin_arm64.tar.gz"
-      sha256 "2ad667458bab49bf8633732c5d4e7c3b845ec5ef3c5e7656563ad816264e64ff"
+      sha256 "4cc901bb04282e8c6fc764ed36ec3536ca7cddfba2f299028c47d02b944a6b87"
 
       define_method(:install) do
         bin.install "datetime-mcp"
@@ -30,14 +30,14 @@ class DatetimeMcp < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.0/datetime-mcp_1.3.0_linux_amd64.tar.gz"
-      sha256 "8b42a550b839b42d6ca0e5f213558f1c23d55552f9c989ad9aa7840e547f359c"
+      sha256 "eb0fe24eaa1fbd970580a15b060ffbe8b443777d35e5109602ae3b08e9286348"
       define_method(:install) do
         bin.install "datetime-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/tmsdnl/datetime-mcp/releases/download/v1.3.0/datetime-mcp_1.3.0_linux_arm64.tar.gz"
-      sha256 "80f003bbb720d0586cdcf1b2ed004f6b37848a957fd58fb906894f26cfd2a17c"
+      sha256 "f5e428a044a2dfc52a985d4763d1999f59271d723be66d44f1ab0af3a0874405"
       define_method(:install) do
         bin.install "datetime-mcp"
       end
